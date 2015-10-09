@@ -2,9 +2,21 @@ machine:
     services:
         - docker
 
+    # Set the timezone
+    timezone:
+        America/Los_Angeles
+
+    # Override /etc/hosts
+    hosts:
+        dev.clientbase.io: 127.0.0.1
+
+    # Enviroment Vars
+    environment:
+        COMPOSE_API_VERSION: 1.18
+
 dependencies:
     override:
-        - sudo pip install -U docker-compose==1.4.1
+        - sudo pip install -U docker-compose
 
 test:
     override:
