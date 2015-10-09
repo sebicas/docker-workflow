@@ -2,10 +2,6 @@ machine:
     services:
         - docker
 
-dependencies:
-    override:
-        - pip install -U docker-compose==1.4.2
-
 test:
     override:
         - docker-compose run -d --no-deps node1
